@@ -13,7 +13,6 @@ const NavBar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="navbar-collapse collapse justify-content-stretch" id="navbar7">
-
         <ul className="navbar-nav ml-auto">
         <li className="nav-item">
             <Link className="nav-link" to="/dashboard">Dashboard</Link>
