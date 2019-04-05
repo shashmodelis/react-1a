@@ -23,11 +23,12 @@ class App extends Component {
       <div>
         <NavBar/>
             {/* Routes will go here */}
-            <Route path="/login" component={Login} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/profile" component={Profile} />
-            <Route exact={true} path="/" component={Dashboard} />
-
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/profile" component={Profile} />
+              <Redirect to="/dashboard" />
+            </Switch>
       </div>
     );
   }
