@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
       <Link className="navbar-brand" to="/">
-      <img className="img-responsive" src="logo_sphere_white.png" height="40" className="d-inline-block mr-3"  />
+      <img alt='modelis AI' src="logo_sphere_white.png" height="40" className="d-inline-block mr-3"  />
         Supercharger Dashboard
       </Link>
 
