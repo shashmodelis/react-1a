@@ -5,7 +5,7 @@ const Dashboard = () => {
         <div className="jumbotron jumbotron-fluid">
         <div className="container">
             <h1 className="display-4">Work in Progress</h1>
-            <p className="lead">This dashboard is on its way...</p>
+            <p className="lead">The dashboard is on its way...</p>
         </div>
         </div>
     );
