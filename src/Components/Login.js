@@ -7,7 +7,7 @@ const Login = () => {
         <div className="row col-sm-12 col-md-7 col-lg-5 mx-auto">
         <div className="card border-primary mb-3 mai-login-form" >
         <div className="card-header">
-            <img src="modelis_ai_logo_6.svg" alt="modelis AI Logo"/>
+            <h4 className="card-header">Supercharger Dashboard</h4>
         </div>
         <div className="card-body">
             <h4 className="card-title">Login</h4>

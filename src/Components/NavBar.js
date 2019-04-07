@@ -5,8 +5,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
       <Link className="navbar-brand" to="/">
-      <img alt='modelis AI' src="logo_sphere_white.png" height="40" className="d-inline-block mr-3"  />
-        Supercharger Dashboard
+      <img alt='modelis AI' src="modelis_ai_logo_6_white.png" height="50" className="d-inline-block mr-3"  />
       </Link>
 
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
