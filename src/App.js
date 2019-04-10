@@ -4,6 +4,7 @@ import { AuthRoute, UnauthRoute } from 'react-router-auth'
 import NavBar from './Components/NavBar';
 
 import Login from './Components/Login'
+import Logout from './Components/Logout'
 import Dashboard from './Components/Dashboard'
 import Profile from './Components/Profile'
 
@@ -42,13 +43,20 @@ class App extends Component {
           <AuthRoute path="/dashboard" component={Dashboard} redirectTo="/login" authenticated={this.state.authenticated} />
           <AuthRoute path="/profile" component={Profile} redirectTo="/login" authenticated={this.state.authenticated} />
           <UnauthRoute path="/login" component={Login} redirectTo="/dashboard" authenticated={this.state.authenticated} />
+          <Route 
+            path="/logout" 
+            render={(props) => <Logout {...props} 
+              handleLogout={this.handleLogout}
+            />}
+          />
           <Route exact path="/" render={() => (
             this.state.authenticated ? (
               <Redirect to="/dashboard"/>
               ) : (
                 <Redirect to="/login"/>
             )
-)}/>
+          )}/>
+
         </Switch>
       </div>
     );
@@ -71,7 +79,6 @@ class App extends Component {
     for (let i=0; i < sessionStorage.length; i++) {
       let key=sessionStorage.key(i);
       let value=sessionStorage.getItem(key)
-      console.log(key, value)
       this.state[key] = value
     }
 
@@ -127,6 +134,18 @@ class App extends Component {
       sessionStorage.removeItem('authenticated');
       sessionStorage.removeItem('userId');
     });
+  }
+
+  handleLogout = () => {
+    this.setState({
+      loginErrMessage: '',
+      jwtKey: '',
+      authenticated: false
+    })
+    sessionStorage.removeItem('jwtKey');
+    sessionStorage.removeItem('authenticated');
+    sessionStorage.removeItem('userId');
+
   }
 
 }
