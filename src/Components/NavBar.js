@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import {Link} from 'react-router-dom';
 
-const NavBar = () => {
+class NavBar extends Component {
+  renderLinks() {
+    if (this.props.authenticated) {
+      return(
+        <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">Dashboard</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/profile">Profile</Link>
+        </li>
+        </ul>
+      )
+    } else {
+      return(
+        <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">Login</Link>
+        </li>
+        </ul>
+        )
+    }
+  }
+  render() {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
       <Link className="navbar-brand" to="/">
@@ -12,23 +36,13 @@ const NavBar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="navbar-collapse collapse justify-content-stretch" id="navbar7">
-        <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-            <Link className="nav-link" to="/dashboard">Dashboard</Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link" to="/profile">Profile</Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link" to="/login">Login</Link>
-        </li>
-        </ul>
+          {this.renderLinks()}
     </div>    
 
     </nav>
   );
 }
-
+}
 export default NavBar;
 
 
