@@ -19,6 +19,8 @@ class Login extends Component {
         </div>
         <div className="card-body">
             <h4 className="card-title">Login</h4>
+            <small id="loginErrMessage" className="form-text text-warning">{this.props.loginErrMessage}</small>
+
             <div className="card-text">
 
             <form onSubmit={this.props.handleAuthenticate}>
@@ -54,7 +56,6 @@ class Login extends Component {
               disabled={!this.validateForm()}>
             Submit
             </button>
-            <small id="loginErrMessage" className="form-text text-warning">{this.props.loginErrMessage}</small>
             </form>
 
             </div>

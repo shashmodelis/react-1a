@@ -14,7 +14,6 @@ import axios from 'axios';
 
 // import route Components here
 import {
-  BrowserRouter as Router,
   Route,
   Switch,
   Redirect
