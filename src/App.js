@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { AuthRoute, UnauthRoute } from 'react-router-auth'
 
 import NavBar from './Components/NavBar';
 
@@ -39,20 +38,40 @@ class App extends Component {
               authenticated={this.state.authenticated}
             />}
           />
-          <AuthRoute path="/dashboard" component={Dashboard} redirectTo="/login" authenticated={this.state.authenticated} />
-          <AuthRoute path="/profile" component={Profile} redirectTo="/login" authenticated={this.state.authenticated} />
-          <UnauthRoute path="/login" component={Login} redirectTo="/dashboard" authenticated={this.state.authenticated} />
+
+          <Route path="/dashboard" render={
+            (props) => (
+              this.state.authenticated ? (
+                <Dashboard {...props}/>
+              ) : (
+                <Redirect to="/login"/>
+              )
+          )}/>
+
+
+          <Route path="/profile" render={
+            (props) => (
+              this.state.authenticated ? (
+                <Profile {...props}/>
+              ) : (
+                <Redirect to="/login"/>
+              )
+          )}/>
+
+
+
           <Route 
             path="/logout" 
             render={(props) => <Logout {...props} 
               handleLogout={this.handleLogout}
             />}
           />
-          <Route exact path="/" render={() => (
+
+          <Route path="/" render={() => (
             this.state.authenticated ? (
               <Redirect to="/dashboard"/>
-              ) : (
-                <Redirect to="/login"/>
+                ) : (
+              <Redirect to="/login"/>
             )
           )}/>
 
@@ -140,7 +159,9 @@ class App extends Component {
     this.setState({
       loginErrMessage: '',
       jwtKey: '',
-      authenticated: false
+      authenticated: false,
+      userId: '',
+      password: ''
     })
     sessionStorage.removeItem('jwtKey');
     sessionStorage.removeItem('authenticated');
