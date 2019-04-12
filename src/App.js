@@ -113,11 +113,12 @@ class App extends Component {
     )
     .then( (response) => {
       this.setState({
-        jwtKey: response.data.token,
+        jwtKey: "JWT " + response.data.token,
         loginErrMessage: '',
-        authenticated: true
+        authenticated: true,
+        password: null
       });
-      sessionStorage.setItem('jwtKey', response.data.token);
+      sessionStorage.setItem('jwtKey', "JWT " + response.data.token);
       sessionStorage.setItem('authenticated', true);
       sessionStorage.setItem('userId', this.state.userId);
     })
