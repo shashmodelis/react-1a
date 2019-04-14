@@ -6,17 +6,16 @@ import BarChart from './Charts/BarChart'
 import PieChart from './Charts/PieChart'
 import LineChart from './Charts/LineChart'
 import AreaChart from './Charts/AreaChart'
+import Series from './Charts/Series'
 
 class Dashboard extends Component {
     render() {
         return(
-        <div className="jumbotron jumbotron-fluid">
-        <div className="container">
+        <div className="container-fluid">
+        <div className="jumbotron">
             <p className="lead">Supercharger Dashboard</p>
-        </div>
-        <div className="container">        
             <div className="row" >
-                <div className="col-lg-3 col-md-12">
+                <div className="col-lg-2 col-md-4">
                     <div className="card border-primary mb-3" >
                         <div className="card-body">
                             <h4 className="card-title">Victory Bar</h4>
@@ -26,7 +25,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-12">
+                <div className="col-lg-2 col-md-4">
                     <div className="card border-primary mb-3" >
                         <div className="card-body">
                             <h4 className="card-title">Victory Pie</h4>
@@ -36,7 +35,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-12">
+                <div className="col-lg-2 col-md-4">
                     <div className="card border-primary mb-3" >
                         <div className="card-body">
                             <h4 className="card-title">Victory Line</h4>
@@ -46,7 +45,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3 col-md-12">
+                <div className="col-lg-6 col-md-8">
                     <div className="card border-primary mb-3" >
                         <div className="card-body">
                             <h4 className="card-title">Victory Area</h4>
@@ -57,11 +56,8 @@ class Dashboard extends Component {
                     </div>
                 </div>
             </div>
+
         </div>
-
-
-
-
         </div>
     );
     }
