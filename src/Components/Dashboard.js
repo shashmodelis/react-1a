@@ -6,59 +6,89 @@ import BarChart from './Charts/BarChart'
 import PieChart from './Charts/PieChart'
 import LineChart from './Charts/LineChart'
 import AreaChart from './Charts/AreaChart'
-import Series from './Charts/Series'
 
 class Dashboard extends Component {
     render() {
         return(
-        <div className="container-fluid">
-        <div className="jumbotron">
-            <p className="lead">Supercharger Dashboard</p>
-            <div className="row" >
-                <div className="col-lg-2 col-md-4">
-                    <div className="card border-primary mb-3" >
-                        <div className="card-body">
-                            <h4 className="card-title">Victory Bar</h4>
-                            <div className="card-text">
-                                <BarChart />
-                            </div>
-                        </div>
-                    </div>
+
+<div className="container-fluid">
+  <div className="row content">
+    
+    <div className="col-sm-12">
+      <div className="well">
+        <h4>Supercharger Dashboard</h4>
+      </div>
+      <div className="row">
+        <div className="col-sm-3">
+            <div className="card border-primary mb-3" >
+                <div className="card-body">
+                    <h4 className="card-title">Users</h4>
+                        <p><LineChart /></p> 
                 </div>
-                <div className="col-lg-2 col-md-4">
-                    <div className="card border-primary mb-3" >
-                        <div className="card-body">
-                            <h4 className="card-title">Victory Pie</h4>
-                            <div className="card-text">
-                                <PieChart />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-2 col-md-4">
-                    <div className="card border-primary mb-3" >
-                        <div className="card-body">
-                            <h4 className="card-title">Victory Line</h4>
-                            <div className="card-text">
-                                <LineChart />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-6 col-md-8">
-                    <div className="card border-primary mb-3" >
-                        <div className="card-body">
-                            <h4 className="card-title">Victory Area</h4>
-                            <div className="card-text">
-                                <AreaChart />
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>    
+        <div className="col-sm-3">
+          <div className="card border-primary mb-3" >
+                <div className="card-body">
+                    <h4 className="card-title">Actions</h4>
+                        <p><BarChart /></p> 
                 </div>
             </div>
+        </div>
+        <div className="col-sm-3">
+          <div className="card border-primary mb-3 mai-card-small" >
+                <div className="card-body">
+                    <h4 className="card-title">Sessions</h4>
+                        <p><PieChart /></p> 
+                </div>
+            </div>
+        </div>
+        <div className="col-sm-3">
+                    <h4>Referrals</h4>
+                    <AreaChart /> 
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-4">
+          <div className="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-8">
+          <div className="well">
+            <p>Text</p> 
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="well">
+            <p>Text</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        </div>
-        </div>
+
+
     );
     }
 

@@ -13,7 +13,7 @@ const data = [
 class LineChart extends Component {
     render() {
         return (
-            <VictoryChart height={200} width={200}>
+            <VictoryChart height={300} width={300}>
             <VictoryLine
                 interpolation="cardinal" data={data}
                 style={{ data: { stroke: "#c43a31" } }}
