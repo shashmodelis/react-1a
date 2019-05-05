@@ -20,7 +20,7 @@ class Dashboard extends Component {
       </div>
       <div className="row card-row">
         <div className="col-sm-3">
-            <div className="card border-primary mb-3  height-100" >
+            <div className="card border-primary mb-3" >
                 <div className="card-body">
                     <h4 className="card-title">Users</h4>
                         <LineChart /> 
@@ -28,7 +28,7 @@ class Dashboard extends Component {
           </div>
         </div>    
         <div className="col-sm-3">
-          <div className="card mb-3 highlight-me height-100" >
+          <div className="card border-primary mb-3" >
                 <div className="card-body">
                     <h4 className="card-title">Actions</h4>
                         <BarChart /> 
@@ -36,7 +36,7 @@ class Dashboard extends Component {
             </div>
         </div>
         <div className="col-sm-3">
-          <div className="card border-primary mb-3  height-100" >
+          <div className="card border-primary mb-3" >
                 <div className="card-body">
                     <h4 className="card-title">Sessions</h4>
                         <PieChart />

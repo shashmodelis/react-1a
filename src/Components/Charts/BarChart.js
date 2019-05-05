@@ -9,7 +9,7 @@ class BarChart extends Component {
         this.state = {
         options: {
             chart: {
-            id: "basic-bar",
+            id: "basic-bar"
             },
             grid: {
                 borderColor: '#bbb',
