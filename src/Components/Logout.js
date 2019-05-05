@@ -6,10 +6,10 @@ import {
 
 class Logout extends Component {
     render() {
-        return(<Redirect to="/login"/>)
+        return(<Redirect to="/"/>)
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.handleLogout()
     }
 }
