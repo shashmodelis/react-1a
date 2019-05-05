@@ -1,42 +1,29 @@
 import React, {Component} from 'react';
-import Chart from "react-apexcharts";
+import { VictoryArea, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
+
+const data = [
+    { x: 0, y: 0 },
+    { x: 1, y: 2 },
+    { x: 2, y: 1 },
+    { x: 3, y: 4 },
+    { x: 4, y: 3 },
+    { x: 5, y: 5 }
+  ];
 
 
-class AreaChart extends Component {
-constructor(props) {
-    super(props);
-
-    this.state = {
-    options: {
-        chart: {
-        id: "basic-bar"
-        },
-        grid: {
-            borderColor: '#bbb',
-            strokeDashArray: 7,
-        },
-        xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-        },
-    },
-    series: [
-        {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-        }
-    ]
-    };
+class PieChart extends Component {
+    render() {
+        return (
+            <VictoryChart
+                theme={VictoryTheme.material}
+            >
+                <VictoryArea
+                    style={{ data: { fill: "#c43a31" } }}
+                    data={data}
+                />
+            </VictoryChart>
+        )
+    }
 }
 
-render() {
-    return (
-        <Chart
-            options={this.state.options}
-            series={this.state.series}
-            type="line"
-        />
-    );
-}
-}
-
-export default AreaChart;
+export default PieChart;

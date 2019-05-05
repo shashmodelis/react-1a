@@ -11,19 +11,19 @@ class Dashboard extends Component {
     render() {
         return(
 
-<div className="container-fluid main-bg">
+<div className="container-fluid">
   <div className="row content">
     
     <div className="col-sm-12">
       <div className="well">
         <h4>Supercharger Dashboard</h4>
       </div>
-      <div className="row card-row">
+      <div className="row">
         <div className="col-sm-3">
             <div className="card border-primary mb-3" >
                 <div className="card-body">
                     <h4 className="card-title">Users</h4>
-                        <LineChart /> 
+                        <p><LineChart /></p> 
                 </div>
           </div>
         </div>    
@@ -31,15 +31,15 @@ class Dashboard extends Component {
           <div className="card border-primary mb-3" >
                 <div className="card-body">
                     <h4 className="card-title">Actions</h4>
-                        <BarChart /> 
+                        <p><BarChart /></p> 
                 </div>
             </div>
         </div>
         <div className="col-sm-3">
-          <div className="card border-primary mb-3" >
+          <div className="card border-primary mb-3 mai-card-small" >
                 <div className="card-body">
                     <h4 className="card-title">Sessions</h4>
-                        <PieChart />
+                        <p><PieChart /></p> 
                 </div>
             </div>
         </div>
