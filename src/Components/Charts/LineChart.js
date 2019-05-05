@@ -1,29 +1,42 @@
 import React, {Component} from 'react';
-import { VictoryLine, VictoryScatter, VictoryChart } from 'victory';
+import Chart from "react-apexcharts";
 
-const data = [
-    { x: 0, y: 0 },
-    { x: 1, y: 2 },
-    { x: 2, y: 1 },
-    { x: 3, y: 4 },
-    { x: 4, y: 3 },
-    { x: 5, y: 5 }
-  ];
 
 class LineChart extends Component {
-    render() {
-        return (
-            <VictoryChart height={300} width={300}>
-            <VictoryLine
-                interpolation="cardinal" data={data}
-                style={{ data: { stroke: "#c43a31" } }}
-            />
-            <VictoryScatter data={data}
-                style={{ data: { fill: "#c43a31" } }}
-            />
-            </VictoryChart>
-        )
-    }
+constructor(props) {
+    super(props);
+
+    this.state = {
+    options: {
+        chart: {
+        id: "basic-bar"
+        },
+        grid: {
+            borderColor: '#bbb',
+            strokeDashArray: 7,
+        },
+        xaxis: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        },
+    },
+    series: [
+        {
+        name: "series-1",
+        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        }
+    ]
+    };
+}
+
+render() {
+    return (
+        <Chart
+            options={this.state.options}
+            series={this.state.series}
+            type="line"
+        />
+    );
+}
 }
 
 export default LineChart;

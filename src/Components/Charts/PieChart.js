@@ -1,24 +1,35 @@
 import React, {Component} from 'react';
-import { VictoryPie, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
-
-const data = [
-    {quarter: '% complete', earnings: "90"},
-    {quarter: '', earnings: "10"},
-    
-];
+import Chart from "react-apexcharts";
 
 
 class PieChart extends Component {
-render() {
-    return (
-        <VictoryPie
-        data={data}
-        x="quarter"
-        y="earnings"
-        colorScale="cool"
-        innerRadius={90}
-        />
-    )
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            options: {
+                labels: ['Apple', 'Mango', 'Orange', 'Watermelon'],
+                legend: {
+                    show: false,
+                },
+                theme: {
+                    mode: 'light', 
+                    palette: 'palette3',
+                }    
+            },
+            series: [44, 55, 13, 33],
+        };
+    }
+
+    render() {
+        return (
+            <Chart
+                options={this.state.options}
+                series={this.state.series}
+                labels={this.state.labels}
+                type="pie"
+            />
+        );
     }
 }
 

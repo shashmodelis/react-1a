@@ -1,44 +1,43 @@
 import React, {Component} from 'react';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
-
-const data = [
-    {buckets:2,count:13}, 
-    {buckets:3,count:93}, 
-    {buckets:4,count:181},
-    {buckets:5,count:98}, 
-    {buckets:6,count:27}, 
-    {buckets:7,count:12}, 
-    {buckets:8,count:3},  
-    {buckets:9,count:1}
-];
+import Chart from "react-apexcharts";
 
 
 class BarChart extends Component {
-render() {
-    return (
-    <VictoryChart
-        // domainPadding will add space to each side of VictoryBar to
-        // prevent it from overlapping the axis
-        domainPadding={20}
-        theme={VictoryTheme.material}
-    >
-        <VictoryAxis
-        // tickValues specifies both the number of ticks and where
-        // they are placed on the axis
-        />
-        <VictoryAxis
-        dependentAxis
-        // tickFormat specifies how ticks should be displayed
-        />
-        <VictoryBar
-        data={data}
-        x="buckets"
-        y="count"
-        colorScale="cool"
-        />
-    </VictoryChart>
-    )
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        options: {
+            chart: {
+            id: "basic-bar"
+            },
+            grid: {
+                borderColor: '#bbb',
+                strokeDashArray: 7,
+            },
+            xaxis: {
+            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+            },
+        },
+        series: [
+            {
+            name: "series-1",
+            data: [30, 40, 45, 50, 49, 60, 70, 91]
+            }
+        ]
+        };
+    }
+
+    render() {
+        return (
+            <Chart
+                options={this.state.options}
+                series={this.state.series}
+                type="bar"
+            />
+        );
     }
 }
+
 
 export default BarChart;
