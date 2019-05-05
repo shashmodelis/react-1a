@@ -14,7 +14,7 @@ const data = [
 class PieChart extends Component {
     render() {
         return (
-            <VictoryChart
+            <VictoryChart height={200} width={800}
                 theme={VictoryTheme.material}
             >
                 <VictoryArea
